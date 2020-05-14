@@ -1,0 +1,189 @@
+.card-container {
+  width: 15rem;
+  height: 20rem;
+  perspective: 30rem;
+}
+
+.bkgd-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #434142;
+  width: 15rem;
+  height: 20rem;
+  border: 5px solid #fff;
+  border-radius: 1rem;
+  margin-top: 12px;
+}
+
+.top,
+.bottom {
+  font-size: 50px;
+}
+
+.top {
+  margin-bottom: 2rem;
+}
+
+.bottom {
+  margin-top: 2rem;
+}
+
+.top .fa-fire,
+.bottom .fa-gem {
+  margin-right: 1rem;
+}
+
+.top .fa-heart,
+.bottom .fa-ankh {
+  margin-left: 1rem;
+}
+
+.fa-heart,
+.fa-gem {
+  color: #f00a47;
+}
+
+.fa-ankh,
+.fa-fire {
+  color: #05ccf0;
+}
+
+.card .front {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.front h1 {
+  font-size: 60px;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 1rem;
+}
+
+.front i {
+  font-size: 50px;
+  margin-left: 1rem;
+}
+
+.front {
+  background-color: #434142;
+  border: 5px solid #fff;
+  transform: rotateX(180deg);
+}
+
+.back {
+  background-color: #424142;
+  border: 5px solid #fff;
+}
+
+.card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  animation-duration: 1s;
+  animation-name: none;
+  animation-timing-function: ease-in;
+}
+
+.card.is-flipped {
+  transform: rotateX(180deg);
+}
+
+@keyframes slideOut {
+  100% {
+    transform: translateX(600px);
+    opacity: 0;
+  }
+}
+
+.win-modal {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 40vh;
+  width: 90vw;
+  background-color: #434142;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px #000;
+  z-index: 20;
+}
+
+.win-modal p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.win-modal button {
+  width: 8rem;
+  height: 2rem;
+  background-color: #f00a47;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.win-modal button:hover {
+  background-color: #eb3d6c;
+}
+
+.win-modal button:focus {
+  outline: #f00a47;
+}
+
+.modal-bkgd {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 15;
+}
+
+@media (min-width: 600px) {
+  .win-modal {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .win-modal {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .win-modal {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .win-modal {
+    width: 50vw;
+  }
+}

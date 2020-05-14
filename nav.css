@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Sen', sans-serif;
+  height: 100vh;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+}
+
+.links a {
+  text-decoration: none;
+  color: #05ccf0;
+  font-weight: bold;
+}
+
+.home-link,
+.contact-link {
+  animation: grow 3s ease-out;
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.code-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10rem;
+}
+
+.code-links p {
+  color: #05ccf0;
+}
+
+.code-links i {
+  color: #f00a47;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.code-links i:hover {
+  transform: scale(1.2);
+}
+
+.mobile-tip-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #434142;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: thin solid #fff;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .mobile-tip-icon {
+    display: none;
+  }
+}
+
+.mobile-tip {
+  position: fixed;
+  color: #fff;
+  border: thin solid #fff;
+  background-color: #434142;
+  width: 90px;
+  padding: 3px;
+  font-size: 10px;
+  display: none;
+}
+
+.github-tip {
+  position: fixed;
+  color: #fff;
+  border: thin solid #fff;
+  background-color: #434142;
+  width: 75px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+}
+
+.codepen-tip {
+  position: fixed;
+  color: #fff;
+  border: thin solid #fff;
+  background-color: #434142;
+  width: 75px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .code-links i {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .code-links i {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .code-links i {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .code-links i {
+    font-size: 24px;
+  }
+  .code-links {
+    width: 11rem;
+  }
+}

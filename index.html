@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/0bfd32ae7b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/progress.css" />
+    <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="styles/play-area.css" />
+    <script src="scripts/app.js" defer></script>
+    <title>Speed Bump</title>
+  </head>
+  <body>
+    <!-- Nav section -->
+    <div class="links">
+      <a href="https://stantondouglass.com" class="home-link">
+        Portfolio
+      </a>
+      <a href="../pages/contact.html" class="contact-link" target="_blank"
+        >Contact</a
+      >
+      <div class="code-links">
+        <p>View Code:</p>
+        <a href="#" class="github-link" id="githubLink">
+          <i class="fab fa-github-square"></i>
+        </a>
+        <a href="#" class="codepen-link" id="codepenLink">
+          <i class="fab fa-codepen"></i>
+        </a>
+      </div>
+      <div class="mobile-tip-icon" id="mobileTipIcon">?</div>
+    </div>
+
+    <!-- Tooltips  -->
+    <div class="mobile-tip" id="mobileTip">
+      <p>Github | Codepen</p>
+    </div>
+    <div class="github-tip" id="githubTip">
+      <p>Github</p>
+    </div>
+    <div class="codepen-tip" id="codepenTip">
+      <p>Codepen</p>
+    </div>
+
+    <!-- Instruction & Scores buttons -->
+    <div class="info-btns" id="infoBtns">
+      <p class="instr-btn" id="instrBtn">Instructions</p>
+      <p class="scores-btn" id="scoresBtn">Your Scores</p>
+    </div>
+
+    <!-- Instructions page -->
+    <div class="instr-page" id="instrPage">
+      <div class="hide-instr-page" id="hideInstrPage">
+        <h2>X</h2>
+      </div>
+      <h1>Instructions</h1>
+      <br />
+      <ul>
+        <li>
+          <p>
+            The goal of the game is to guess whether the next card drawn will be
+            red or blue. You make your guess by clicking the 'Guess Red' or
+            'Guess Blue' button. The green lights above the cards track your
+            progress through the game. When you guess correctly a green light
+            will turn on. When you guess incorrectly a green light will turn
+            off. When the final light is turned on you have won the game!
+          </p>
+        </li>
+        <br />
+        <li>
+          <p>
+            The speed bump, the gray bar between the fourth and fifth green
+            lights makes things a bit more interesting... Once you progress past
+            the speed bump, incorrect guesses always take you back to the fourth
+            green light, back across the speed bump. In other words, in order to
+            win the game you need three correct guesses in a row once you have
+            passed the speed bump.
+          </p>
+        </li>
+        <br />
+        <li>
+          <p>
+            Each card in the deck can only be drawn once per shuffle. Each time
+            a card is drawn a little red card or blue card will appear in the
+            'Played Cards' section - red if the card drawn is red, and blue if
+            the card drawn is blue. This will allow you to employ a bit of
+            strategy in your guesses, based on how many blue or red cards were
+            already drawn. However, if you go through the entire deck without
+            finishing the game, the deck gets reshuffled and all cards are
+            available again. So guess wisely, and good luck!
+          </p>
+        </li>
+        <br />
+        <li>
+          <p>
+            After you win a game all your guesses are tallied and displayed in
+            the window that pops up to congratulate you on your win. After
+            clicking the 'OK' button, or clicking outside of the window, the
+            game will reset and your score will be saved. You can click the
+            'Your Scores' text above the green lights to view your recent
+            scores. Play again to see if you can win the game with fewer
+            guesses, or play with friends to see who can beat the game with the
+            fewest guesses!
+          </p>
+        </li>
+        <br />
+        <li>
+          <p>
+            At the top of the page, on the left, you can click the 'Back to
+            Portfolio Home' link to go back to my portfolio's home page. You can
+            also click on the Github icon or the Codepen icon to the right of
+            'View Code:' to take a look at my files and see how I built the
+            game. If you like what you see and want to contact me, please click
+            the 'Contact' link at the bottom of my page next to my name. That
+            link will take you to the contact section of my portfolio where you
+            can view my contact information, or fill out the form - in which
+            case I will get back to you as soon as possible! Thank you for
+            checking out my game! Please feel free to email me (using the
+            contact link to find my email address) with any thoughts, critiques,
+            or questions about this game!
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scores page  -->
+    <div class="scores-page" id="scoresPage">
+      <div class="hide-scores-page" id="hideScoresPage">
+        <h2>X</h2>
+      </div>
+      <h1>Recent Scores</h1>
+      <ol>
+        <li><p id="score1"></p></li>
+        <li><p id="score2"></p></li>
+        <li><p id="score3"></p></li>
+        <li><p id="score4"></p></li>
+        <li><p id="score5"></p></li>
+      </ol>
+    </div>
+
+    <!-- Game progress lights & speedbump -->
+    <div class="game-progress" id="gameProgress">
+      <div class="lights"></div>
+      <div class="lights"></div>
+      <div class="lights"></div>
+      <div class="lights"></div>
+      <div class="speed-bump"></div>
+      <div class="lights"></div>
+      <div class="lights"></div>
+      <div class="lights"></div>
+    </div>
+
+    <!-- Cards and win modal -->
+    <div class="card-container">
+      <div class="bkgd-card" id="bkgdCard">
+        <div class="top">
+          <i class="fas fa-fire"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="bottom">
+          <i class="fas fa-gem"></i>
+          <i class="fas fa-ankh"></i>
+        </div>
+      </div>
+
+      <div class="card" id="card">
+        <div class="card-face back">
+          <div class="top">
+            <i class="fas fa-fire"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="bottom">
+            <i class="fas fa-gem"></i>
+            <i class="fas fa-ankh"></i>
+          </div>
+        </div>
+        <div class="card-face front" id="front"></div>
+      </div>
+    </div>
+
+    <div class="win-modal" id="winModal">
+      <h1>You win!</h1>
+      <h3></h3>
+      <h4>Play again to try winning with fewer guesses!</h4>
+      <button>OK</button>
+    </div>
+
+    <div class="modal-bkgd" id="modalBkgd"></div>
+
+    <!-- Played cards area and guessing buttons -->
+    <div class="played-card-area">
+      <div class="played-text" id="playedText">
+        <p>Played Cards</p>
+      </div>
+      <div class="played-cards" id="playedCards"></div>
+    </div>
+
+    <div class="guess-btns" id="guessBtns">
+      <div class="red-btn" id="redBtn">Guess Red</div>
+      <div class="blue-btn" id="blueBtn">Guess Blue</div>
+    </div>
+
+    <div class="signature" id="signature">
+      <p>Created by:&emsp;Douglass Stanton</p>
+      <br />
+      <div class="build" id="build">
+        <p>
+          Built with:
+        </p>
+        <i class="fab fa-html5"></i><i class="fab fa-css3"></i>
+        <i class="fab fa-js-square"></i>
+      </div>
+    </div>
+  </body>
+</html>

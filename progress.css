@@ -1,0 +1,287 @@
+.info-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15rem;
+  color: #dbdad7;
+}
+
+.instr-btn:hover,
+.scores-btn:hover {
+  color: #fff;
+}
+
+.instr-btn,
+.scores-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.instr-btn {
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 5;
+}
+
+@keyframes glow {
+  0% {
+    color: #dbdad7;
+  }
+  50% {
+    color: #f00a47;
+    text-shadow: 0 0 2px #f00a47;
+  }
+  100% {
+    color: #dbdad7;
+    text-shadow: none;
+  }
+}
+
+.instr-page {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: #fff;
+  background-color: #434142;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem;
+  z-index: 5;
+  animation-name: none;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.hide-instr-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.instr-page ul {
+  width: 24rem;
+  margin-top: 1rem;
+  background-color: #1e1e1e;
+  padding: 1.7rem;
+  border: 3px solid #f00a47;
+  border-radius: 10px;
+  line-height: 22pt;
+  overflow-y: scroll;
+}
+
+.scores-page {
+  position: absolute;
+  left: 5%;
+  top: -100%;
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  background-color: #434142;
+  border: thin solid #1e1e1e;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem;
+  z-index: 5;
+  animation-name: none;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.scores-page ol {
+  width: 16rem;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  background-color: #1e1e1e;
+  padding: 1.7rem;
+  border: 3px solid #f00a47;
+  border-radius: 10px;
+}
+
+.scores-page p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin-right: 40px;
+}
+
+.scores-page li {
+  margin-left: 50px;
+}
+
+.hide-scores-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+@keyframes showInfoPage {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes hideInfoPage {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+.game-progress {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20rem;
+}
+
+.lights {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(#62a371, #135e25);
+  opacity: 0.5;
+}
+
+.lights-on {
+  background: radial-gradient(closest-side, #23c449, #fff, #6df702);
+  box-shadow: 0 0 4px 3px #ebf8e1;
+}
+
+.speed-bump {
+  width: 10px;
+  height: 60px;
+  background-color: #434142;
+  border: thin solid #fff;
+  border-radius: 2px;
+}
+
+@media (min-width: 600px) {
+  .instr-page ul {
+    width: 28rem;
+    font-size: 16px;
+  }
+  .instr-page h1 {
+    font-size: 28px;
+  }
+  .scores-page {
+    width: 80%;
+    left: 10%;
+  }
+  .scores-page ol {
+    width: 18rem;
+  }
+  .scores-page p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .instr-page {
+    width: 90%;
+    left: 5%;
+  }
+  .instr-page ul {
+    width: 30rem;
+    font-size: 16px;
+  }
+  .instr-page h1 {
+    font-size: 32px;
+  }
+  .scores-page {
+    width: 70%;
+    left: 15%;
+  }
+  .scores-page ol {
+    width: 20rem;
+  }
+  .scores-page h1 {
+    font-size: 35px;
+  }
+  .scores-page p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .instr-page {
+    width: 80%;
+    left: 10%;
+  }
+  .instr-page ul {
+    width: 34rem;
+    font-size: 18px;
+  }
+  .instr-page h1 {
+    font-size: 35px;
+  }
+  .scores-page {
+    width: 60%;
+    left: 20%;
+  }
+  .scores-page h1 {
+    font-size: 40px;
+  }
+  .scores-page p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .instr-page {
+    width: 70%;
+    left: 15%;
+  }
+  .instr-page ul {
+    width: 38rem;
+    font-size: 20px;
+  }
+  .instr-page h1 {
+    font-size: 40px;
+  }
+  .scores-page {
+    width: 50%;
+    left: 25%;
+  }
+  .scores-page h1 {
+    font-size: 45px;
+  }
+  .scores-page p {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .instr-page {
+    width: 60%;
+    left: 20%;
+  }
+  .scores-page {
+    width: 45%;
+    left: 27.5%;
+  }
+}
